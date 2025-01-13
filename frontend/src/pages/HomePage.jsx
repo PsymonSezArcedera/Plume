@@ -16,7 +16,7 @@ function HomePage(){
     }, [])
 
     return(
-        <>
+        <div className="m-20">
             {blogs.map((blog) => {
                 return (
                     <>
@@ -24,7 +24,7 @@ function HomePage(){
                     </>
                 )
             })}
-        </>
+        </div>
     )
 }
 
