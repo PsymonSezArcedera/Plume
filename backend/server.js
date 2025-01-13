@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from "dotenv"
 import bodyParser from "body-parser";
 dotenv.config({path: "./config.env"})
+import blogRouter from "./routes/blogRoutes.js";
 
 const app = express();
 const PORT = 3000;
@@ -20,3 +21,4 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
 
+app.use("/blogs", blogRouter);
