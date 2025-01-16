@@ -10,6 +10,14 @@ import ProfilePage from "./pages/ProfilePage"
 import Layout from "./components/layout"
 
 function App() {
+
+  useEffect(() => {
+    let token = sessionStorage.getItem("User")
+    if(token){
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
+    }
+  }, [])
+  
   return (
     <Router>
       <Routes>

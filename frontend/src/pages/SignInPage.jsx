@@ -10,7 +10,7 @@ function SignInPage(){
         <>
             {!view ?
             <div className="flex flex-col"> 
-                <LogIn buttonView={<button onClick={() => setView(!view)}>Sign Up</button>}/>
+                <LogIn buttonView={<button className="font-black text-sky-950 bg-green-500 rounded-full w-96 h-10 " onClick={() => setView(!view)}>SIGN UP</button>}/>
                 
             </div>: 
             <>
