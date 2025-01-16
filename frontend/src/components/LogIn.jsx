@@ -13,6 +13,7 @@ function LogIn({buttonView}){
 
     const [type, setType] = useState('password');
     const [pass, setPass] = useState('show')
+    
     function handleToggle(){
         if (type==='password'){
             setPass('hide');

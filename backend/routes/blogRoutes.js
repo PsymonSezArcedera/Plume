@@ -37,6 +37,7 @@ blogRouter.post(
             category: req.body.category,
             author: req.body.author,
             date: req.body.date,
+            image: req.body.image,
             rating: 0
         });
         const blog = await newBlog.save();
@@ -56,6 +57,7 @@ blogRouter.put(
             blog.category = req.body.category;
             blog.author = req.body.author;
             blog.date = req.body.date;
+            blog.image = req.body.image;
             blog.rating = req.body.rating;
             await blog.save();
             res.send({message: 'Blog updated'});

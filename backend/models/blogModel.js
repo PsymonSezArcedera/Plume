@@ -7,6 +7,7 @@ const blogSchema = new mongoose.Schema(
         category: {type:String, required:true},
         author: {type:String, required:true},
         date: {type:Date, required:true},
+        image: {type:String, required:true},
         rating: {type:Number, required:true}
     },
 );
