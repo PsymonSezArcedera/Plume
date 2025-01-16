@@ -11,6 +11,19 @@ function LogIn({buttonView}){
 
     const navigate = useNavigate()
 
+    const [type, setType] = useState('password');
+    const [pass, setPass] = useState('show')
+    function handleToggle(){
+        if (type==='password'){
+            setPass('hide');
+            setType('text')
+         } else {
+            setPass('show')
+            setType('password')
+         }
+    }
+
+
     function handleChange(e){
         setUser({ ...user, [e.target.name]: e.target.value })
     }
@@ -36,7 +49,12 @@ function LogIn({buttonView}){
                 <h1 className="font-black text-sky-950 text-3xl">SIGN IN</h1>
                 <input className="bg-sky-100 w-11/12 md:w-96 p-2 rounded-xl m-4 text-green-600 border-0" placeholder="Email" type="email" onChange={handleChange} name="email" required maxLength={40}></input>
                 <hr className="mb-5 w-11/12 md:w-96"></hr>
-                <input className="bg-sky-100 w-11/12 md:w-96 p-2 rounded-xl text-green-600 border-0" placeholder="Password" type="password" onChange={handleChange} name="password" required maxLength={40}></input>
+                <div className="flex flex-row w-11/12 md:w-96">
+                    <input className="bg-sky-100  w-11/12 md:w-96 p-2 rounded-xl text-green-600 border-0" placeholder="Password" type={type} onChange={handleChange} name="password" required maxLength={40}></input>
+                    <span class="flex justify-around items-center mb-5 cursor-pointer" onClick={handleToggle}>
+                        <h1 className="text-sm font-bold text-sky-950 absolute mr-16 mt-5">{pass}</h1>
+                    </span>
+                </div>
                 <button className="m-16 text-green-500 bg-sky-950 rounded-full w-11/12 md:w-96 p-2 font-black" type="submit">SIGN IN</button>
             </form>
 

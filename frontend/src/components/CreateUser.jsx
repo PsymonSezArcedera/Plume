@@ -10,6 +10,19 @@ function CreateUser({buttonView}){
         password: "", 
     })
 
+    const [type, setType] = useState('password');
+    const [pass, setPass] = useState('show')
+    
+    function handleToggle(){
+        if (type==='password'){
+            setPass('hide');
+            setType('text')
+         } else {
+            setPass('show')
+            setType('password')
+         }
+    }
+
     function handleChange(e){
         setUser({ ...user, [e.target.name]: e.target.value })
     }
@@ -34,7 +47,12 @@ function CreateUser({buttonView}){
                 <hr className="m-2 w-11/12 md:w-96"></hr>
                 <input className="bg-sky-100 w-11/12 md:w-96 p-2 rounded-xl m-2 text-green-600 border-0" placeholder={"Email"} onChange={handleChange} name="email" required maxLength={20}/>
                 <hr className="m-2 w-11/12 md:w-96"></hr>
-                <input className="bg-sky-100 w-11/12 md:w-96 p-2 rounded-xl m-2 text-green-600 border-0" placeholder={"Password"} onChange={handleChange} name="password" required maxLength={20}/>
+                <div className="flex flex-row w-11/12 md:w-96">
+                    <input className="bg-sky-100  w-11/12 md:w-96 p-2 rounded-xl text-green-600 border-0" placeholder="Password" type={type} onChange={handleChange} name="password" required maxLength={40}></input>
+                    <span class="flex justify-around items-center mb-5 cursor-pointer" onClick={handleToggle}>
+                        <h1 className="text-sm font-bold text-sky-950 absolute mr-16 mt-5">{pass}</h1>
+                    </span>
+                </div>
                 <button className="m-16 text-green-500 bg-sky-950 rounded-full w-11/12 md:w-96 p-2 font-black" type="submit">CREATE ACCOUNT</button>
             </form>
             <div className="flex flex-col bg-sky-950 w-full md:w-1/3 h-screen items-center justify-center p-10 text-center">
