@@ -14,7 +14,7 @@ function SignInPage(){
                 
             </div>: 
             <>
-                <CreateUser buttonView={<button  onClick={() => setView(!view)}>Login</button>}/>
+                <CreateUser buttonView={<button className="font-black text-sky-950 bg-green-500 rounded-full w-96 h-10 " onClick={() => setView(!view)}>SIGN IN</button>}/>
             </>}   
         </>
     )
