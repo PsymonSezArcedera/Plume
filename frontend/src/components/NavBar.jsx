@@ -29,7 +29,6 @@ function NavBar(){
                         </>
                     )
                 })}
-                {/* <button className = "rounded font-semibold">Logout</button> */}
                 <button className="text-green-400 bg-blue-950  p-2 rounded-3xl w-24 font-semibold m-4" onClick={handleLogout}> Logout </button>
             </div>
         </div>

@@ -8,6 +8,7 @@ import FindPage from "./pages/FindPage"
 import CreatePage from "./pages/CreatePage"
 import ProfilePage from "./pages/ProfilePage"
 import Layout from "./components/layout"
+import ReadBlog from "./pages/ReadBlog"
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element = {<SignInPage/>}/>
         <Route element={<Layout/>}>
           <Route path="/homepage" element={<HomePage/>}/>
+          <Route path="/readblog/:id" element={<ReadBlog/>}/>          
           <Route path="/find" element={<FindPage/>}/>
           <Route path="/create" element={<CreatePage/>}/>
           <Route path="/myprofile" element={<ProfilePage/>}/>

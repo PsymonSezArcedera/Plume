@@ -9,6 +9,7 @@ function HomePage(){
         async function loadBlogs(){
             let blogs = await getBlogs()
             if(blogs){
+                blogs.sort((r1,r2) => r2.rating - r1.rating)
                 setBlogs(blogs) 
             }
         }
