@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getBlogs } from "../api/blogAPI";
 import BlogTile from "../components/BlogTile";
 import logo from "../assets/plume_logo.png"
+
 function HomePage(){
     const [blogs, setBlogs] = useState([])
 
