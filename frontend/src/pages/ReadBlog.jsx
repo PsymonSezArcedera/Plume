@@ -2,27 +2,34 @@ import { findBlog } from "../api/blogAPI"
 import { useParams, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { findUser } from "../api/userAPI"
+import {ObjectId} from 'mongoose'
+import { useCallback } from "react"
 
 function ReadBlog(){
     const [blog, setBlog] = useState({})   
-    const [author, setAuthor] = useState('')
+    const [author, setAuthor] = useState([''])
 
     let params = useParams()
     let id = params.id
     const navigate = useNavigate()
+
+    const getAuthor = useCallback(async (AuthorId) => {
+        let id = new mongoose.Types.ObjectId(AuthorId)
+        let author = await findUser(id)
+        console.log(author)
+        setAuthor(author.firstName.concat(" ",author.lastName))
+    },[])
 
     useEffect(() =>{
         async function loadPost(){
             let post = await findBlog(id)
             if (post){
                 setBlog(post)
-                // let author = await findUser(blog?.author)
-                // setAuthor(author.firstName.concat(" ",author.lastName))
+                await getAuthor(post.author)
             }
         }
         loadPost()
-
-    }, [])
+    }, [id, getAuthor])
 
     return(
         <div className="flex flex-col m-40 justify-between ">
