@@ -10,7 +10,6 @@ function CreatePage(){
     const [category, setCategory] = useState("")
     const [image, setImage] = useState("")
 
-
     async function handleSubmit(){
         let submitPost = {
             title: title,
