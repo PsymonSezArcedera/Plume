@@ -1,7 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { findUser } from "../api/userAPI";
 
 function BlogTile({blog}){
+    const [author, setAuthor] = useState([''])
+
+    useEffect(() => {
+        async function getAuthor(){
+            let author = await findUser(blog.author)
+            setAuthor(author.firstName.concat(" ",author.lastName))
+        }
+        getAuthor()
+    }, [])
 
     const date = new Date(blog.date);
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -16,7 +26,7 @@ function BlogTile({blog}){
                 <h1 className="text-sm font-normal text-sky-950 m-4">{blog.introduction}</h1>
             </div>
             <div className="flex flex-row justify-between m-4 font-light text-sm text-sky-950 content-center text-center ">
-                <h1 className="w-1/4">{blog.author}</h1>
+                <h1 className="w-1/4">{author}</h1>
                 <h1 className="text-green-500 font-bold bg-sky-950 w-2/4 p-2 rounded-full">{blog.category}</h1>
                 <h1 className="w-1/4 ">{formattedDate}</h1>
             </div>
