@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { createBlog } from "../api/blogAPI"
+import logo from "../assets/plume_logo.png"
+
 function CreatePage(){
 
     const [title,setTitle] = useState("")
@@ -33,19 +35,24 @@ function CreatePage(){
 
     return(
         <form className="m-40 flex flex-col md:items-start items-center" onSubmit={handleSubmit}>
+            <img src={logo} alt="logo" className="w-16 h-16 self-center" /> 
+            <div className="flex md:flex-row flex-col self-center">
+                <h1 className="text-sky-950 font-bold text-5xl m-2">Create New</h1>
+                <h1 className="text-green-500 font-bold text-5xl m-2">Plume</h1>
+            </div>
             <label className="font-bold text-sky-950 m-2">TITLE</label>
-            <input className="bg-sky-100 w-96 rounded-full p-4 text-sky-950" name="title" placeholder="title" onChange={(e) => setTitle(e.target.value)} value={title} maxLength={100} required/>
+            <input className="bg-gray-200 w-96 rounded-full p-4 text-sky-950" name="title" placeholder="title" onChange={(e) => setTitle(e.target.value)} value={title} maxLength={100} required/>
             <hr className="m-4"></hr>
             <label className="font-bold text-sky-950 m-2">INTRODUCTION</label>
-            <input className="bg-sky-100  w-96 rounded-full p-4 text-sky-950" name="introduction" placeholder="introduction" onChange={(e) => setIntroduction(e.target.value)} value={introduction} maxLength={200} required/>
+            <input className="bg-gray-200  w-96 rounded-full p-4 text-sky-950" name="introduction" placeholder="introduction" onChange={(e) => setIntroduction(e.target.value)} value={introduction} maxLength={200} required/>
             <hr className="m-4"></hr>
             <label className="font-bold text-sky-950 m-2">CATEGORY</label>
-            <input className="bg-sky-100  w-96 rounded-full p-4 text-sky-950" name="category" placeholder="category" onChange={(e) => setCategory(e.target.value)} value={category} maxLength={100} required/>
+            <input className="bg-gray-200  w-96 rounded-full p-4 text-sky-950" name="category" placeholder="category" onChange={(e) => setCategory(e.target.value)} value={category} maxLength={100} required/>
             <hr className="m-4"></hr>
             <label className="font-bold text-sky-950 m-2">IMAGE LINK</label>
-            <input className="bg-sky-100  w-96 rounded-full p-4 text-sky-950" name="image" placeholder="image link" onChange={(e) => setImage(e.target.value)} value={image} maxLength={100} required/>
+            <input className="bg-gray-200 w-96 rounded-full p-4 text-sky-950" name="image" placeholder="image link" onChange={(e) => setImage(e.target.value)} value={image} maxLength={100} required/>
             <label className="font-bold text-sky-950 self-center m-10">CONTENT</label>
-            <textarea className="self-center bg-sky-100 w-96 md:w-full rounded-full p-4 m-2" name="content" placeholder="Tell us your story..." onChange={(e) => setContent(e.target.value)} value={content} maxLength={5000} required/>
+            <textarea className="self-center bg-gray-200 w-96 md:w-full rounded-full p-4 m-2" name="content" placeholder="Tell us your story..." onChange={(e) => setContent(e.target.value)} value={content} maxLength={5000} required/>
             
             <div className="flex flex-col md:flex-row self-center">
                 <button className="self-center m-10 bg-green-500 text-lg text-sky-950 p-4 rounded-full font-black w-32" type="submit">POST</button>
