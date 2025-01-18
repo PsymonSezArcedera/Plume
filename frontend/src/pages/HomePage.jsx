@@ -16,12 +16,12 @@ function HomePage(){
     }, [])
 
     return(
-        <div className="m-40 flex flex-col ">
-            <div className="flex flex-row self-center text-center">
+        <div className="flex flex-col m-40">
+            <div className="flex flex-col md:flex-row self-center text-center">
                 <h1 className="font-bold text-5xl text-sky-950 m-2 ">Browse the latest </h1>
                 <h1 className="font-bold text-5xl text-green-500 m-2 ">Plumes</h1>
             </div>
-
+            <div className="flex flex-row self-center flex-wrap justify-center">
             {blogs.map((blog) => {
                 return (
                     <>
@@ -29,6 +29,7 @@ function HomePage(){
                     </>
                 )
             })}
+            </div>
         </div>
     )
 }
