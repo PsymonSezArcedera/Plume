@@ -33,6 +33,7 @@ blogRouter.post(
     expressAsyncHandler(async (req,res) => {
         const newBlog = new Blog({
             title: req.body.title,
+            introduction: req.body.introduction,
             content: req.body.content,
             category: req.body.category,
             author: req.body.author,
@@ -53,6 +54,7 @@ blogRouter.put(
         const blog = await Blog.findById(blogId)
         if(blog){
             blog.title = req.body.title;
+            blog.introduction = req.body.introduction;
             blog.content = req.body.content;
             blog.category = req.body.category;
             blog.author = req.body.author;

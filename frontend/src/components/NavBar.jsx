@@ -10,7 +10,7 @@ function NavBar(){
     }
 
     return (
-        <div className="rounded-xl items-center shadow-md fixed top-0 w-full flex justify-between">
+        <div className="rounded-xl items-center shadow-md bg-white fixed z-10 top-0 w-full flex justify-between">
             <div className="flex flex-row content-center items-center ">
                 <img src={logo} alt="logo" className="w-[100px] h-[50px] m-4 -mr-5 object-contain"/>
                 <h1 className="text-blue-950 font-black text-3xl">PLU</h1>
