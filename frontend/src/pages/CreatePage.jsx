@@ -40,16 +40,16 @@ function CreatePage(){
                 <h1 className="text-green-500 font-bold text-5xl m-2">Plume</h1>
             </div>
             <label className="font-bold text-sky-950 m-2">TITLE</label>
-            <input className="bg-gray-200 w-96 rounded-full p-4 text-sky-950" name="title" placeholder="title" onChange={(e) => setTitle(e.target.value)} value={title} maxLength={100} required/>
+            <input className="bg-gray-200 w-96 rounded-full p-4 text-sky-950" name="title" placeholder="Enter your blog title..." onChange={(e) => setTitle(e.target.value)} value={title} maxLength={100} required/>
             <hr className="m-4"></hr>
             <label className="font-bold text-sky-950 m-2">INTRODUCTION</label>
-            <input className="bg-gray-200  w-96 rounded-full p-4 text-sky-950" name="introduction" placeholder="introduction" onChange={(e) => setIntroduction(e.target.value)} value={introduction} maxLength={200} required/>
+            <input className="bg-gray-200  w-96 rounded-full p-4 text-sky-950" name="introduction" placeholder="Write a short introduction..." onChange={(e) => setIntroduction(e.target.value)} value={introduction} maxLength={200} required/>
             <hr className="m-4"></hr>
             <label className="font-bold text-sky-950 m-2">CATEGORY</label>
-            <input className="bg-gray-200  w-96 rounded-full p-4 text-sky-950" name="category" placeholder="category" onChange={(e) => setCategory(e.target.value)} value={category} maxLength={100} required/>
+            <input className="bg-gray-200  w-96 rounded-full p-4 text-sky-950" name="category" placeholder="What is your blog about..." onChange={(e) => setCategory(e.target.value)} value={category} maxLength={100} required/>
             <hr className="m-4"></hr>
             <label className="font-bold text-sky-950 m-2">IMAGE LINK</label>
-            <input className="bg-gray-200 w-96 rounded-full p-4 text-sky-950" name="image" placeholder="image link" onChange={(e) => setImage(e.target.value)} value={image} maxLength={100} required/>
+            <input className="bg-gray-200 w-96 rounded-full p-4 text-sky-950" name="image" placeholder="Insert a cover image for your blog..." onChange={(e) => setImage(e.target.value)} value={image} maxLength={100} required/>
             <label className="font-bold text-sky-950 self-center m-10">CONTENT</label>
             <textarea className="self-center bg-gray-200 w-96 md:w-full rounded-full p-4 m-2" name="content" placeholder="Tell us your story..." onChange={(e) => setContent(e.target.value)} value={content} maxLength={5000} required/>
             

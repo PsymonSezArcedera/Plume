@@ -33,6 +33,7 @@ function ProfilePage(){
         <div className="flex flex-col m-40">
 
             <div className="flex flex-col self-center m-10 w-full rounded-lg p-10 text-sky-950 shadow-lg text-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/9203/9203764.png" alt="profile-image" className="w-40 h-40 self-center" />
                 <h2 className="text-4xl font-bold">{user.user?.firstName.concat(" ", user.user?.lastName)}</h2>
                 <h2 className="text-base font-normal ">{user.user?.email}</h2>
                 <h2 className="text-base font-normal">Posts: {blogs.length}</h2>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { findUser } from "../api/userAPI";
 
 function BlogTile({blog}){
-    const [author, setAuthor] = useState([''])
+    const [author, setAuthor] = useState('')
 
     useEffect(() => {
         async function getAuthor(){
