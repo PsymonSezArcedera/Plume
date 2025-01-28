@@ -28,8 +28,7 @@ function FindPage(){
     }, [search, blogs])
 
     return(
-        <div className="flex flex-col m-40 justify-center ">
-            <img src={logo} alt="logo" className="w-16 h-16 self-center" /> 
+        <div className="flex flex-col mt-40 m-10 justify-center "> 
             <div className="flex md:flex-row flex-col self-center mb-10">
                 <h1 className="text-sky-950 font-bold text-5xl m-2">Find</h1>
                 <h1 className="text-green-500 font-bold text-5xl m-2">Plume</h1>

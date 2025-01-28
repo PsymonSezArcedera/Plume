@@ -1,7 +1,7 @@
 import NavBar from "./NavBar"
 import { Outlet,useNavigate } from "react-router-dom"
 import { useEffect } from "react"
-
+import Footer from "./Footer"
 
 function Layout(){
     let user = sessionStorage.getItem("User")
@@ -17,6 +17,7 @@ function Layout(){
         <div>
             <NavBar/>
             <Outlet/>
+            <Footer/>
         </div>
     )
 }

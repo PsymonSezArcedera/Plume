@@ -20,7 +20,7 @@ function HomePage(){
     return(
         <div className="flex flex-col mt-20">
             <img src="https://images.unsplash.com/photo-1432821596592-e2c18b78144f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmxvZyUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D" className="h-64 object-cover "/>
-            <div className="flex flex-col md:flex-row self-center text-center absolute m-20 text-5xl font-medium">
+            <div className="flex flex-col md:flex-row self-center text-center absolute m-20 text-5xl font-bold">
                 <h1 className="text-sky-950 m-2 ">Browse The Latest </h1>
                 <h1 className="text-green-700 m-2 ">Plumes</h1>
             </div>
