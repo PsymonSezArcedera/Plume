@@ -1,11 +1,18 @@
 import { useState, useEffect } from "react"
 import { getBlogs } from "../api/blogAPI";
 import BlogTile from "../components/BlogTile";
+import { useNavigate } from "react-router-dom";
 import * as jwt_decode from "jwt-decode"
 import logo from "../assets/plume_logo.png"
 
 function ProfilePage(){
     const [user, setUser] = useState({})
+    const navigate = useNavigate();
+
+    function handleLogout() {
+        sessionStorage.removeItem("User");
+        navigate("/");
+    }
 
     useEffect(() => {
         async function loadUserData(){
@@ -37,7 +44,7 @@ function ProfilePage(){
                 <h2 className="text-4xl font-bold">{user.user?.firstName.concat(" ", user.user?.lastName)}</h2>
                 <h2 className="text-base font-normal ">{user.user?.email}</h2>
                 <h2 className="text-base font-normal">Posts: {blogs.length}</h2>
-                <button className="mt-10 bg-sky-950 text-green-500 font-bold rounded-full p-2 w-64 self-center">SIGN OUT</button>
+                <button className="mt-10 bg-sky-950 text-green-500 font-bold rounded-full p-2 w-64 self-center" onClick={handleLogout}>SIGN OUT</button>
             </div>
 
             <img src={logo} alt="logo" className="w-16 h-16 self-center mt-10" /> 

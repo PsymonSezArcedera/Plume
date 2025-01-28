@@ -18,12 +18,13 @@ function HomePage(){
     }, [])
 
     return(
-        <div className="flex flex-col m-40">
-            <img src={logo} alt="logo" className="w-16 h-16 self-center" /> 
-            <div className="flex flex-col md:flex-row self-center text-center">
-                <h1 className="font-bold text-5xl text-sky-950 m-2 ">Browse the latest </h1>
-                <h1 className="font-bold text-5xl text-green-500 m-2 ">Plumes</h1>
+        <div className="flex flex-col mt-20">
+            <img src="https://images.unsplash.com/photo-1432821596592-e2c18b78144f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmxvZyUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D" className="h-64 object-cover "/>
+            <div className="flex flex-col md:flex-row self-center text-center absolute m-20 text-5xl font-medium">
+                <h1 className="text-sky-950 m-2 ">Browse The Latest </h1>
+                <h1 className="text-green-700 m-2 ">Plumes</h1>
             </div>
+            <hr className="m-10 w-10/12 self-center"></hr>
             <div className="flex flex-row self-center flex-wrap justify-center">
             {blogs.map((blog) => {
                 return (
