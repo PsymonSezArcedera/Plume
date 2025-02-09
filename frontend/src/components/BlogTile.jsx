@@ -25,7 +25,7 @@ function BlogTile({blog}){
                 <h1 className="text-sm font-bold text-green-700">{blog.category}</h1>
                 <h1 className="text-xl text-blue-950 font-semibold mt-4 mb-4">{blog.title}</h1>
                 <h1 className="text-sm font-light text-sky-950">{blog.introduction}</h1>
-                <hr className="m-2 w-11/12"></hr>
+                <hr className="m-2 w-11/12 border-t-2"></hr>
                 <div className="text-blue-950 ">
                     <h1 className="font-bold text-sm">{author}</h1>
                     <h1 className="text-xs">{formattedDate}</h1>

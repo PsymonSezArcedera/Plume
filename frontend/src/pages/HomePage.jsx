@@ -24,7 +24,7 @@ function HomePage(){
                 <h1 className="text-sky-950 m-2 ">Browse The Latest </h1>
                 <h1 className="text-green-700 m-2 ">Plumes</h1>
             </div>
-            <hr className="m-10 w-10/12 self-center"></hr>
+            <hr className="m-10 w-10/12 self-center border-t-2"></hr>
             <div className="flex flex-row self-center flex-wrap justify-center">
             {blogs.map((blog) => {
                 return (
